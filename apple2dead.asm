@@ -40,7 +40,6 @@ romstart:
 
 
 		sta TXTSET 		; turn on text
-		sta LOWSCR		; set page 1
 		sta CLRALTCHAR	; turn off alt charset on later apple machines
 		sta CLR80VID	; turn off 80 col on //e or //c
 
@@ -156,6 +155,12 @@ zp_msg: .apple2sz "TEST ZERO PAGE"
 zp_end = *
 pe_msg: .apple2sz "PAGE ERRORS FOUND"
 pe_end:
+zp_step0: .apple2sz "STEP 0: "
+zp_step1: .apple2sz "STEP 1: "
+zp_step2: .apple2sz "STEP 2: "
+zp_step3: .apple2sz "STEP 3: "
+zp_step4: .apple2sz "STEP 4: "
+zp_pattern_msg: .apple2sz "XOR PATTERN:"
 
 
 ;-----------------------------------------------------------------------------

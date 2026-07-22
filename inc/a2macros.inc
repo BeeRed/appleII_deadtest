@@ -200,3 +200,20 @@ pexit:
 		dey
 		bpl :-
 .endmacro
+
+.macro inline_hex_x  dst
+		txa
+		lsr
+		lsr
+		lsr
+		lsr
+		tay
+		lda	hex_tbl, y	; high nibble
+		sta	dst
+		txa
+		and	#$0f
+		tay
+		lda	hex_tbl, y	; low nibble
+		sta	dst+1
+		txa
+.endmacro
