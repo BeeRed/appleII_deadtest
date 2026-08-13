@@ -163,6 +163,7 @@ marchup:
 		inline_print bad_msg, $0750
 
 		TSX				; retrieve the test value
+		inline_hex_x $750+24
 		TXA
 		LDY #0
 	print_bit:
