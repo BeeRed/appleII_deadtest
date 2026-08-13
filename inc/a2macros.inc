@@ -147,6 +147,25 @@ pnext:	LDA msg,Y	; pointer to the string
 pexit:	
 .endmacro
 
+; it destroys A, Y
+; doesn't modify X
+.macro inline_hex_x  dst
+		txa			; start with high nibble
+		lsr
+		lsr
+		lsr
+		lsr
+		tay
+		lda	hex_tbl, y	; fetch from table
+		sta	dst		; store@dst addr
+
+		txa			; next is low nibble
+		and	#$0f
+		tay
+		lda	hex_tbl, y	; fetch from table
+		sta	dst+1		; store@dst addr
+.endmacro
+
 .macro	zp_alloc id, size
 	.pushseg
 	.zeropage
