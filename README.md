@@ -127,8 +127,9 @@ I have tested Bradley's LanguageCard. It has a toggle switch that sticks through
 ## To assemble the ROM (Linux or WSL on Windows)
 You only need to assemble if you are planning to make changes.  Otherwise see the **[Releases](https://github.com/misterblack1/appleII_deadtest/releases)** page.
 
-* `apt-get install cc65 make`
-* Then download the zip from the repo and run `make`
+* `apt-get install cc65 make pandoc`
+* install AppleComander and create link ac to ac-executable
+* Then clone repo or download the zip from the repo and run `make`
 
 `a2vmemnoram.asm` and `a2vmemnoram.bin` are Frank IZ8DWF's original test ROM, as shown in my Apple II Clone repair video.
 
